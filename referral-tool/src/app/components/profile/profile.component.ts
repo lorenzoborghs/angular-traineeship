@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profile } from 'src/app/interfaces/profile';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   favorite: boolean = false;
-  profile: any = {
+  profile: Profile = {
     name: 'Lorenzo Borghs',
-    birthday: '23 augustus 1992',
+    birthday: new Date('08/23/1992'),
     position: 'Front-End Developer',
     location: 'Turnhout',
     yearsExperience: 5,
@@ -22,6 +23,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {}
 
   toggleFavorite(): void {
-    alert('Favorite');
+    this.favorite = !this.favorite;
   }
 }

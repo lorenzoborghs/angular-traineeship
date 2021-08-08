@@ -14,7 +14,7 @@
       </div>
       <div class="media-right is-flex is-align-items-center">
         <span (click)="toggleFavorite()" class="icon mr-2"
-          ><i class="far fa-star"></i
+          ><i [ngClass]="{ far: !favorite, fas: favorite }" class="fa-star"></i
         ></span>
         <a class="button">Bekijken</a>
       </div>
