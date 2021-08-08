@@ -1,1 +1,45 @@
-<p>profile works!</p>
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <img
+          src="https://placebear.com/80/80"
+          [alt]="profile.name"
+          [title]="profile.name"
+        />
+      </div>
+      <div class="media-content">
+        <p class="title">{{ profile.name }}</p>
+        <p class="subtitle">{{ profile.position }}</p>
+      </div>
+      <div class="media-right is-flex is-align-items-center">
+        <span (click)="toggleFavorite()" class="icon mr-2"
+          ><i class="far fa-star"></i
+        ></span>
+        <a class="button">Bekijken</a>
+      </div>
+    </div>
+    <div class="content">
+      <div>
+        <span class="icon mr-2"><i class="fas fa-calendar"></i></span>
+        <span>{{ profile.birthday }}</span>
+      </div>
+      <div>
+        <span class="icon mr-2"><i class="fas fa-building"></i></span>
+        <span>{{ profile.location }}</span>
+      </div>
+      <div *ngIf="profile.yearsExperience">
+        <span class="icon mr-2"><i class="fas fa-business-time"></i></span>
+        <span>{{ profile.yearsExperience }} jaar</span>
+      </div>
+      <div class="tags mt-5">
+        <span
+          *ngFor="let tag of profile.tags; let i = index"
+          class="tag"
+          [ngClass]="{ 'is-primary': i === 0 }"
+          >{{ tag }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
