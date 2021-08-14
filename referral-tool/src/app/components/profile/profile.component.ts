@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
   favorite: boolean = false;
   profile: Profile = {
     name: 'Lorenzo Borghs',
+    picture: 'https://placebear.com/80/80',
     birthday: new Date('08/23/1992'),
     position: 'Front-End Developer',
     location: 'Turnhout',

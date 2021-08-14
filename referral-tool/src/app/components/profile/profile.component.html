@@ -22,7 +22,7 @@
     <div class="content">
       <div>
         <span class="icon mr-2"><i class="fas fa-calendar"></i></span>
-        <span>{{ profile.birthday }}</span>
+        <span>{{ profile.birthday | date: "dd MMMM YYYY" }}</span>
       </div>
       <div>
         <span class="icon mr-2"><i class="fas fa-building"></i></span>

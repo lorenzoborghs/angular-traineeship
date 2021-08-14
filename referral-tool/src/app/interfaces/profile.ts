@@ -1,5 +1,6 @@
 export interface Profile {
   name: string;
+  picture: string;
   position: string;
   location: string;
   birthday: Date;
