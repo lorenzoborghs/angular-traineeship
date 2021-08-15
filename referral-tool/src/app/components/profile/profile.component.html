@@ -33,12 +33,20 @@
         <span>{{ profile.yearsExperience }} jaar</span>
       </div>
       <div class="tags mt-5">
-        <span
-          *ngFor="let tag of profile.tags; let i = index"
-          class="tag"
-          [ngClass]="{ 'is-primary': i === 0 }"
-          >{{ tag }}</span
-        >
+        <app-tag
+          *ngFor="let tag of profile.tags"
+          (remove)="removeTag($event)"
+          [tag]="tag"
+        ></app-tag>
+      </div>
+      <div>
+        <input
+          [(ngModel)]="newTag"
+          type="text"
+          placeholder="Add tag"
+          class="mr-2"
+        />
+        <button (click)="addTag()">Add</button>
       </div>
     </div>
   </div>
